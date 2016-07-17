@@ -1,0 +1,12 @@
+version '1.0'
+dependencies {
+    provided project(':demo-infra')
+    provided 'io.netty:netty-all:4.1.2.Final'
+    provided 'org.springframework:spring-beans:4.3.1.RELEASE'
+    provided 'org.springframework:spring-context:4.3.1.RELEASE'
+    provided 'org.springframework:spring-core:4.3.1.RELEASE'
+    provided 'org.springframework:spring-aop:4.3.1.RELEASE'
+    provided 'org.aspectj:aspectjrt:1.8.9'
+    provided 'org.aspectj:aspectjweaver:1.8.9'
+    provided 'org.apache.commons:commons-lang3:3.4'
+}

@@ -1,0 +1,56 @@
+version = '1.0'
+allprojects {
+    group = 'com.haozileung'
+}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.ben-manes.versions'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    configurations {
+        provided
+        compile.exclude module: 'commons-logging'
+        compile.exclude module: 'log4j'
+        compile.exclude module: 'logback-classic'
+        compile.exclude module: 'slf4j-log4j12'
+    }
+    sourceSets.main.compileClasspath += configurations.provided
+    sourceSets.test.compileClasspath += configurations.provided
+    sourceSets.test.runtimeClasspath += configurations.provided
+    dependencies {
+        compile 'org.slf4j:slf4j-api:1.7.21'
+        compile 'org.slf4j:jcl-over-slf4j:1.7.21'
+        compile 'org.slf4j:jul-to-slf4j:1.7.21'
+        compile 'org.apache.logging.log4j:log4j-api:2.6.2'
+        compile 'org.apache.logging.log4j:log4j-core:2.6.2'
+        compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.6.2'
+        compile 'com.alibaba:fastjson:1.2.13'
+        compile 'com.google.guava:guava:19.0'
+        compile 'org.jetbrains.kotlin:kotlin-stdlib:+'
+        compile 'org.jetbrains.kotlin:kotlin-reflect:+'
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.jetbrains.kotlin:kotlin-server-junit:+'
+        testCompile 'org.springframework:spring-server:4.3.1.RELEASE'
+    }
+    [compileJava, compileTestJava].each() {
+        it.options.compilerArgs += ["-Xlint:unchecked", "-Xlint:deprecation", "-Xlint:-options"]
+        it.options.encoding = "UTF-8"
+    }
+}
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:+'
+        classpath 'org.akhikhl.gretty:gretty:+'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+    }
+}

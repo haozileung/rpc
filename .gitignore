@@ -1,0 +1,13 @@
+﻿.settings/
+.classpath
+.project
+*.iml
+*.iws
+*.ipr
+classes/
+bower_components/
+node_modules/
+.idea/
+target/
+build/
+.gradle/

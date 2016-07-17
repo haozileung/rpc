@@ -1,0 +1,17 @@
+group 'com.haozileung'
+version '1.0'
+apply plugin: 'kotlin'
+dependencies {
+    provided 'com.google.inject:guice:4.1.0'
+    provided 'org.springframework:spring-context:4.3.1.RELEASE'
+    provided 'com.ibeetl:beetl:2.5.0'
+    provided 'javax.servlet:javax.servlet-api:3.1.0'
+    provided 'net.sf.ehcache:ehcache-core:2.6.11'
+    provided 'org.apache.commons:commons-configuration2:2.0'
+    provided 'commons-beanutils:commons-beanutils:1.9.2'
+    provided 'com.esotericsoftware:kryo:4.0.0'
+    provided 'com.dyuproject.protostuff:protostuff-core:1.0.10'
+    provided 'com.dyuproject.protostuff:protostuff-runtime:1.0.10'
+    provided 'org.objenesis:objenesis:2.4'
+    provided 'com.whalin:Memcached-Java-Client:3.0.2'
+}
