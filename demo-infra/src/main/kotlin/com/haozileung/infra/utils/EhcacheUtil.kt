@@ -55,6 +55,7 @@ object EhcacheUtil {
         getOrAddCache(cacheName).put(Element(key, value))
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun <T> get(cacheName: String, key: Any): T? {
         val element = getOrAddCache(cacheName).get(key)
         return if (element != null) element.objectValue as T else null

@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     val successCount = AtomicInteger(0)
     val failCount = AtomicInteger(0)
     val totalThread = 5
-    val perThreadCount = 10000
+    val perThreadCount = 100000
     val echoSize = 4
     val totalCount = totalThread * perThreadCount
     val count = CountDownLatch(totalThread)
